@@ -73,7 +73,7 @@ public class DisplayCategoryActivity extends AppCompatActivity {
                 String strStudNo = activityDisplayCategoryBinding.edtCategoryID.getText().toString();
                 Map<String, String> params = new HashMap<>();
                 params.put("selectFn", "fnSearchCategory");
-                params.put("categoryID", categoryID);
+                /*params.put("categoryID", categoryID);*/
                 return params;
             }
 

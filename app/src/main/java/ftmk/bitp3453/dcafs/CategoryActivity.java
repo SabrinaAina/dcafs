@@ -1,5 +1,6 @@
 package ftmk.bitp3453.dcafs;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -42,38 +43,36 @@ public class CategoryActivity extends AppCompatActivity {
 
 
     private void fnAddToRest(View view) {
-        String strURL = "http://192.168.188.33/RESTAPI/rest_api.php";
+        String strURL = "http://10.131.75.177/dcafs/rest_api.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new
-                Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        JSONObject jsonObject = null;
-                        try {
-                            jsonObject = new JSONObject(response);
-                            Toast.makeText(getApplicationContext(), "Respond from server: " +
-                                    jsonObject.getString("respond"), Toast.LENGTH_SHORT).show();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                JSONObject jsonObject = null;
+                try {
+                    jsonObject = new JSONObject(response);
+                    Toast.makeText(getApplicationContext(), "Respond from server: " + jsonObject.getString("respond"), Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Error: ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Cannot receive respond: ", Toast.LENGTH_SHORT).show();
+
             }
         }) {
+            @Nullable
+            @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 String categoryType = categoryMainBinding.edtCategoryType.getText().toString();
 
                 Map<String, String> params = new HashMap<>();
                 params.put("selectFn", "fnSaveData");
                 params.put("categoryType", categoryType);
-
                 return params;
-
             }
-
         };
         requestQueue.add(stringRequest);
     }

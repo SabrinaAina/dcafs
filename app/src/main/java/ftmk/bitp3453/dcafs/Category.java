@@ -1,6 +1,5 @@
 package ftmk.bitp3453.dcafs;
 
-
 import java.io.Serializable;
 
 public class Category implements Serializable {
