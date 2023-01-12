@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_main_activity"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_addCategory_activity"
+        android:icon="@drawable/ic_baseline_addcategory"
+        android:title="Add Category" />
+
+    <item
+        android:id="@+id/nav_categoryList_activity"
+        android:icon="@drawable/ic_baseline_categorylist"
+        android:title="List of Category" />
+
+    <item
+        android:id="@+id/nav_complaint_activity"
+        android:icon="@drawable/ic_baseline_comment_24"
+        android:title="List of Complaint" />
+    <item
+        android:id="@+id/nav_feedback_activity"
+        android:icon="@drawable/ic_baseline_feedback"
+        android:title="List of Feedback" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_baseline_logout"
+        android:title="Logout" />
+</menu>
