@@ -21,24 +21,25 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import ftmk.bitp3453.dcafs.databinding.ActivityDisplayCategoryBinding;
+import ftmk.bitp3453.dcafs.databinding.ActivitySearchCategoryBinding;
 
-public class DisplayCategoryActivity extends AppCompatActivity {
+public class SearchCategoryActivity extends AppCompatActivity {
 
-    ActivityDisplayCategoryBinding activityDisplayCategoryBinding;
+    ActivitySearchCategoryBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        activityDisplayCategoryBinding = ActivityDisplayCategoryBinding.inflate(getLayoutInflater());
+        binding = ActivitySearchCategoryBinding.inflate(getLayoutInflater());
 
-        setContentView(activityDisplayCategoryBinding.getRoot());
+        setContentView(binding.getRoot());
 
-        activityDisplayCategoryBinding.btnSearch.setOnClickListener(this::fnSearch);
+        binding.btnSearch.setOnClickListener(this::fnSearch);
     }
-    public void fnSearch(View view) {
+
+        public void fnSearch(View view) {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String strURL = "http://192.168.188.33/RESTAPI/rest_api.php";
+        String strURL = "http://192.168.188.33/dcafs/category.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL,
                 new Response.Listener<String>() {
                     @Override
@@ -51,8 +52,8 @@ public class DisplayCategoryActivity extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
 
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                activityDisplayCategoryBinding.txtVwCategoryID.setText(jsonObject.getString("categoryID"));
-                                activityDisplayCategoryBinding.txtVwCategoryType.setText(jsonObject.getString("categoryType"));
+                                binding.txtVwCategoryID.setText(jsonObject.getString("categoryID"));
+                                binding.txtVwCategoryType.setText(jsonObject.getString("categoryType"));
 
                             }
 
@@ -70,10 +71,10 @@ public class DisplayCategoryActivity extends AppCompatActivity {
         }) {
             protected Map<String, String> getParams() throws AuthFailureError {
 
-                String strStudNo = activityDisplayCategoryBinding.edtCategoryID.getText().toString();
+                String categoryID = binding.edtCategoryID.getText().toString();
                 Map<String, String> params = new HashMap<>();
                 params.put("selectFn", "fnSearchCategory");
-                /*params.put("categoryID", categoryID);*/
+                params.put("categoryID", categoryID);
                 return params;
             }
 

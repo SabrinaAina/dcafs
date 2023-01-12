@@ -43,7 +43,7 @@ public class CategoryActivity extends AppCompatActivity {
 
 
     private void fnAddToRest(View view) {
-        String strURL = "http://10.131.75.177/dcafs/rest_api.php";
+        String strURL = "http://192.168.188.33/dcafs/category.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new Response.Listener<String>() {
             @Override

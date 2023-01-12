@@ -5,22 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DisplayCategoryActivity">
-
-    <EditText
-        android:id="@+id/edtCategoryID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Search by Category ID"
-        android:inputType="textPersonName" />
+    tools:context=".DisplayAllCategoryActivity">
 
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="fnSearch"
-        android:text="Search" />
+        android:text="Display All Category" />
 
     <LinearLayout
         android:layout_width="match_parent"
