@@ -57,10 +57,10 @@ public class AdminActivity extends AppCompatActivity {
                         intent = new Intent(getApplicationContext(), DisplayAllCategoryActivity.class);
                         startActivity(intent);
                         return true;
-//                    case R.id.nav_complaint_activity:
-//                        intent = new Intent(getApplicationContext(), SecondActivityCam.class);
-//                        startActivity(intent);
-//                        return true;
+                    case R.id.nav_complaint_activity:
+                        intent = new Intent(getApplicationContext(), ComplaintListActivity.class);
+                        startActivity(intent);
+                        return true;
                     case R.id.nav_feedback_activity:_activity:
                         intent = new Intent(getApplicationContext(), FeedbackListActivity.class);
                         startActivity(intent);

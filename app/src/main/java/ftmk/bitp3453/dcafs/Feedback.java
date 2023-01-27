@@ -3,9 +3,10 @@ package ftmk.bitp3453.dcafs;
 import java.io.Serializable;
 
 public class Feedback implements Serializable {
-    private String strCategoryType, strDescription, strRating;
+    private String strCategoryType, strDescription;
+    private int strRating;
 
-    public Feedback(String strCategoryId, String strDescription, String strRating) {
+    public Feedback(String strCategoryType, String strDescription, int strRating) {
         this.strCategoryType = strCategoryType;
         this.strDescription = strDescription;
         this.strRating = strRating;
@@ -19,7 +20,7 @@ public class Feedback implements Serializable {
         return strCategoryType;
     }
 
-    public void setStrCategoryId(String strCategoryId) {
+    public void setStrCategoryType(String strCategoryType) {
         this.strCategoryType = strCategoryType;
     }
 
@@ -31,11 +32,11 @@ public class Feedback implements Serializable {
         this.strDescription = strDescription;
     }
 
-    public String getStrRating() {
+    public double getStrRating() {
         return strRating;
     }
 
-    public void setStrRating(String strRating) {
+    public void setStrRating(int strRating) {
         this.strRating = strRating;
     }
 }
