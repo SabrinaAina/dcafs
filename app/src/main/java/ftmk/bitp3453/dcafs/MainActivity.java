@@ -30,45 +30,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//        drawerLayout = findViewById(R.id.my_drawer_layout);
-//        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
-//        actionBarDrawerToggle.syncState();
-//
-//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-//
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        navigationView = findViewById(R.id.nav_parent_menu);
-//
-//        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                Intent intent;
-//                switch (item.getItemId()) {
-//                    case R.id.nav_parent_activity:
-//                        intent = new Intent(getApplicationContext(), ParentActivity.class);
-//                        startActivity(intent);
-//                        return true;
-//                    case R.id.nav_feedback_activity:
-//                        intent = new Intent(getApplicationContext(), FeedbackActivity.class);
-//                        startActivity(intent);
-//                        return true;
-//                    case R.id.nav_complaint_activity:
-////                        intent = new Intent(getApplicationContext(), ComplaintActivity.class);
-////                        startActivity(intent);
-//                        Toast.makeText(getApplicationContext(), "Complaint Activity", Toast.LENGTH_SHORT).show();
-//
-//                        return true;
-//                    case R.id.nav_logout:
-//                        intent = new Intent(getApplicationContext(), MainActivity.class);
-//                        startActivity(intent);
-//                        return true;
-//                    default:
-//                        return false;
-//                }
-//            }
-//        });
         binding.imgVwRegister.setOnClickListener(this::fnGoRegister);
         binding.imgVwLogin.setOnClickListener(this::fnGoLogin);
+        binding.imgVwLoginAdmin.setOnClickListener(this::fnGoLoginAdmin);
 
     }
 
@@ -90,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
     private void fnGoLogin(View view) {
 
         Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+    }
+
+    private void fnGoLoginAdmin(View view) {
+
+        Intent intent = new Intent(this, LoginAdmin.class);
         startActivity(intent);
     }
 }
