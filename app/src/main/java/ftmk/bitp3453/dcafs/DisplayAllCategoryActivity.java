@@ -48,7 +48,7 @@ public class DisplayAllCategoryActivity extends AppCompatActivity {
         //set recyclerview for category
         categories = new Vector<>();
         categoryAdapter = new CategoryAdapter(getLayoutInflater(), categories);
-        binding.rcvCategory.setAdapter(categoryAdapter);
+
         binding.rcvCategory.setLayoutManager(new LinearLayoutManager(this));
         fnGetCategory();
 
@@ -58,20 +58,22 @@ public class DisplayAllCategoryActivity extends AppCompatActivity {
         String url = "http://192.168.17.94/dcafs/category.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject obj = new JSONObject(response);
-
-                            JSONArray categoriesArray = obj.getJSONArray("categories");
+                            JSONArray categoriesArray = new JSONArray(response);
                             for (int i = 0; i < categoriesArray.length(); i++) {
                                 JSONObject categoryJSON = categoriesArray.getJSONObject(i);
-                                category = new Category(categoryJSON.getString("categoryID"), categoryJSON.getString("categoryType"));
+                                String id = categoryJSON.getString("categoryID");
+                                String title = categoryJSON.getString("categoryType");
+                                category = new Category(id, title);
                                 categories.add(category);
-                                categoryAdapter.notifyItemInserted(categories.size());
                             }
+                            categoryAdapter.notifyItemInserted(categories.size());
+                            binding.rcvCategory.setAdapter(categoryAdapter);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
