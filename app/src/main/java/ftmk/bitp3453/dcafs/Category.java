@@ -11,8 +11,8 @@ public class Category implements Serializable {
         this.categoryID = categoryID;
     }
 
-    public Category() {
-
+    public Category(String categoryType) {
+        this.categoryType = categoryType;
     }
 
     public String getCategoryType() {

@@ -2,17 +2,14 @@ package ftmk.bitp3453.dcafs;
 
 import java.io.Serializable;
 
-public class Feedback implements Serializable {
+public class Complain implements Serializable {
     private String strCategoryType, strDescription;
-    private int strRating;
 
-    public Feedback(String strCategoryType, String strDescription, int strRating) {
+    public Complain(String strCategoryType, String strDescription) {
         this.strCategoryType = strCategoryType;
         this.strDescription = strDescription;
-        this.strRating = strRating;
     }
-
-    public Feedback() {
+    public Complain(){
 
     }
 
@@ -30,13 +27,5 @@ public class Feedback implements Serializable {
 
     public void setStrDescription(String strDescription) {
         this.strDescription = strDescription;
-    }
-
-    public double getStrRating() {
-        return strRating;
-    }
-
-    public void setStrRating(int strRating) {
-        this.strRating = strRating;
     }
 }
