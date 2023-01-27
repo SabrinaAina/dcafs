@@ -47,7 +47,7 @@ public class AdminActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.nav_categoryList_activity:
-                        intent = new Intent(getApplicationContext(), SearchCategoryActivity.class);
+                        intent = new Intent(getApplicationContext(), DisplayAllCategoryActivity.class);
                         startActivity(intent);
                         return true;
 //                    case R.id.nav_complaint_activity:
