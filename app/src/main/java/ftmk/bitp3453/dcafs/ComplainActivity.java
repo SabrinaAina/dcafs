@@ -98,12 +98,19 @@ public class ComplainActivity extends AppCompatActivity {
         fnDisplayCategory();
         complaintBinding.btnSubmit.setOnClickListener(this::fnSubmitComplaint);
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void fnDisplayCategory() {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String strUrl = "http://192.168.17.94/dcafs/complaint.php";
+        String strUrl = "http://192.168.0.6/dcafs/complaint.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, strUrl,
                 new Response.Listener<String>() {
                     @Override
@@ -145,7 +152,7 @@ public class ComplainActivity extends AppCompatActivity {
 
     private void fnSubmitComplaint(View view) {
 
-        String url = "http://192.168.17.94/dcafs/complaint.php";
+        String url = "http://192.168.0.6/dcafs/complaint.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
