@@ -57,34 +57,59 @@
     tools:context=".AdminActivity"
     tools:ignore="HardcodedText">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".AdminActivity">
+        android:id="@+id/linearLayout2">
         <!-- You can add all other view elements such as editText, button, spinner and such
          within the tag <layout></layout> -->
 
         <EditText
             android:id="@+id/edtCategoryType"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Category Type"
             android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:clickable="true"
             android:onClick="fnAddToRest"
-            app:srcCompat="@android:drawable/ic_input_add"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+            tools:layout_conversion_absoluteHeight="56dp"
+            tools:layout_editor_absoluteY="48dp"
+            tools:layout_editor_absoluteX="178dp"
+            tools:layout_conversion_absoluteWidth="56dp" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_editor_absoluteY="104dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/displayCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_conversion_absoluteHeight="308dp"
+            tools:layout_editor_absoluteY="123dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_menu"
