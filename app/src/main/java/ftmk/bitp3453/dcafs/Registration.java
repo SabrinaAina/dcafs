@@ -56,7 +56,7 @@ public class Registration extends AppCompatActivity {
             Toast.makeText(Registration.this, "Empty field not allowed!",Toast.LENGTH_SHORT).show();
         }
         else {
-            String strURL = "http://192.168.188.82/dcafs/User.php";
+            String strURL = "http://192.168.188.33/dcafs/User.php";
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new Response.Listener<String>() {
                 @Override
@@ -65,6 +65,9 @@ public class Registration extends AppCompatActivity {
                     try {
                         jsonObject = new JSONObject(response);
                         Toast.makeText(getApplicationContext(), "Respond from server: " + jsonObject.getString("respond"), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                        startActivity(intent);
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
