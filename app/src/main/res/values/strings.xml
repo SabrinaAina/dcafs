@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">dcafs</string>
+    <string name="nav_open" />
+    <string name="nav_close" />
 </resources>
