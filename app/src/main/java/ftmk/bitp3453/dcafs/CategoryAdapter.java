@@ -1,6 +1,5 @@
 package ftmk.bitp3453.dcafs;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -22,7 +21,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new CategoryViewHolder(layoutInflater.inflate(R.layout.item_category, parent, false));
+        return new CategoryViewHolder(layoutInflater.inflate(R.layout.item_category,parent,false));
     }
 
     @Override
