@@ -54,10 +54,8 @@ public class ParentActivity extends AppCompatActivity {
                         startActivity(intent);
                         return true;
                     case R.id.nav_complaint_activity:
-//                        intent = new Intent(getApplicationContext(), ComplaintActivity.class);
-//                        startActivity(intent);
-                        Toast.makeText(getApplicationContext(), "Complaint Activity", Toast.LENGTH_SHORT).show();
-
+                        intent = new Intent(getApplicationContext(), ComplainActivity.class);
+                        startActivity(intent);
                         return true;
                     case R.id.nav_logout:
                         intent = new Intent(getApplicationContext(), MainActivity.class);
