@@ -121,7 +121,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/baloo"
-                            android:text="Login"
+                            android:text="Parent Login"
+                            android:textAlignment="center"
                             android:textSize="20sp" />
 
                         <ImageView

@@ -47,7 +47,7 @@ public class LoginAdmin extends AppCompatActivity {
             Toast.makeText(LoginAdmin.this, "Empty field not allowed!",Toast.LENGTH_SHORT).show();
         }
         else {
-            String strURL = "http://192.168.188.82/dcafs/User.php";
+            String strURL = "http://192.168.188.33/dcafs/User.php";
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new Response.Listener<String>() {
                 @Override
@@ -56,7 +56,7 @@ public class LoginAdmin extends AppCompatActivity {
                     try {
                         jsonObject = new JSONObject(response);
                         Toast.makeText(getApplicationContext(), "Respond from server: " + jsonObject.getString("respond"), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                         startActivity(intent);
 
                     } catch (JSONException e) {
