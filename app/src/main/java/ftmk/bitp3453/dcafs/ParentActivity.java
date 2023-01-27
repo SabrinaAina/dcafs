@@ -56,6 +56,9 @@ public class ParentActivity extends AppCompatActivity {
                     case R.id.nav_complaint_activity:
                         intent = new Intent(getApplicationContext(), ComplainActivity.class);
                         startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "Complaint Activity", Toast.LENGTH_SHORT).show();
+
+
                         return true;
                     case R.id.nav_logout:
                         intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -67,6 +70,7 @@ public class ParentActivity extends AppCompatActivity {
             }
         });
         binding.imgVwFeedback.setOnClickListener(this::fnGoFeedback);
+        binding.imgVwComplaint.setOnClickListener(this::fnGoComplaint);
     }
 
     @Override
@@ -81,6 +85,11 @@ public class ParentActivity extends AppCompatActivity {
     private void fnGoFeedback(View view) {
 
         Intent intent = new Intent(this, FeedbackActivity.class);
+        startActivity(intent);
+    }
+
+    private void fnGoComplaint(View view) {
+        Intent intent = new Intent(this, ComplainActivity.class);
         startActivity(intent);
     }
 }
