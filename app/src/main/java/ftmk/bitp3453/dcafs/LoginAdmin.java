@@ -23,29 +23,28 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import ftmk.bitp3453.dcafs.databinding.ActivityLoginAdminBinding;
 import ftmk.bitp3453.dcafs.databinding.ActivityLoginBinding;
 
-public class Login extends AppCompatActivity {
+public class LoginAdmin extends AppCompatActivity {
 
-    ActivityLoginBinding loginBinding;
+    ActivityLoginAdminBinding loginBinding;
     private UserRegister userRegister;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_admin);
 
-        loginBinding = ActivityLoginBinding.inflate(getLayoutInflater());
+        loginBinding = ActivityLoginAdminBinding.inflate(getLayoutInflater());
         setContentView(loginBinding.getRoot());
 
         loginBinding.btnLogin.setOnClickListener(this::fnChange);
     }
 
     private void fnChange(View view) {
-
         if (TextUtils.isEmpty(loginBinding.edtEmail.getText().toString()) || TextUtils.isEmpty(loginBinding.edtPassword.getText().toString())) {
-            Toast.makeText(Login.this, "Empty field not allowed!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginAdmin.this, "Empty field not allowed!",Toast.LENGTH_SHORT).show();
         }
         else {
             String strURL = "http://192.168.188.82/dcafs/User.php";
@@ -87,6 +86,5 @@ public class Login extends AppCompatActivity {
             };
             requestQueue.add(stringRequest);
         }
-
     }
 }
