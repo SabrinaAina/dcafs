@@ -5,19 +5,46 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminActivity"
-    tools:ignore="HardcodedText">
+    tools:context=".AdminActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".AdminActivity"/>
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="600dp" />
 
+        <Button
+            android:id="@+id/btnFeedback"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="Feedback"
+            android:layout_marginLeft="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="30dp"/>
+
+        <Button
+            android:id="@+id/btnComplain"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="Complain"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="30dp"/>
+
+    </RelativeLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_menu"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/navigation_menu"/>
+        app:menu="@menu/navigation_menu">
+
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
